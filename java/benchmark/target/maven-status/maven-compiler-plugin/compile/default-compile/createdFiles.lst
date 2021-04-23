@@ -1,0 +1,10 @@
+META-INF/CompilerHints
+benchmark/TimeseriesDTO.class
+benchmark/SerializationBenchmark.class
+benchmark/jmh_generated/SerializationBenchmark_jmhType.class
+META-INF/BenchmarkList
+benchmark/jmh_generated/SerializationBenchmark_jmhType_B3.class
+benchmark/jmh_generated/SerializationBenchmark_jmhType_B1.class
+benchmark/jmh_generated/SerializationBenchmark_timeSerialization_jmhTest.class
+benchmark/jmh_generated/SerializationBenchmark_jmhType_B2.class
+benchmark/BenchmarkRunner.class
