@@ -17,6 +17,8 @@
 	                <version>1.28</version>
 	            </path>
         	</annotationProcessorPaths>
+		<source>1.8</source>
+		<target>1.8</target>
         </configuration>
       </plugin>
       <plugin>
