@@ -14,13 +14,20 @@ import org.openjdk.jmh.annotations.Setup;
 import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.TearDown;
 import org.openjdk.jmh.annotations.Scope;
+import org.openjdk.jmh.annotations.Warmup;
 
 import benchmark.TimeseriesDTO;
 
 @State(Scope.Benchmark)
-@Measurement(iterations = 1000000, timeUnit = TimeUnit.SECONDS)
-@Fork(3)
-@BenchmarkMode(Mode.AverageTime)
+//@Measurement(iterations = 1000000, timeUnit = TimeUnit.SECONDS)
+//@Fork(3)
+//@BenchmarkMode(Mode.AverageTime)
+//--
+//@Measurement(iterations = 5, timeUnit = TimeUnit.SECONDS)
+@Fork(1)
+@BenchmarkMode(Mode.Throughput)
+@Warmup(iterations = 1) 		// Warmup Iteration = n1
+@Measurement(iterations = 3) 	// Iteration = n2
 public class SerializationBenchmark {
   
   TimeseriesDTO tsd;
@@ -43,7 +50,7 @@ public class SerializationBenchmark {
   }
 
   @Benchmark
-  public void timeSerialization() throws IOException {
+  public void serializeTimeSeriesDTO() throws IOException {
 	  out.writeObject(tsd);
   }
 }
