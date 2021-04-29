@@ -28,7 +28,11 @@ public class SerializationBenchmark {
   
   @Setup(Level.Iteration)
   public void setUp() throws Exception {
-	  OutputStream stream = OutputStream.nullOutputStream();
+	  //OutputStream stream = new OutputStream.nullOutputStream(); // since java 11
+	  OutputStream stream = new OutputStream() {
+		  @Override
+		  public void write(int b) {}
+	  };
 	  out = new ObjectOutputStream(stream);
 	  tsd = new TimeseriesDTO();
   }
